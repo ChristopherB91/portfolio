@@ -42,19 +42,13 @@ export const Navbar = () => {
           />
         </svg>
         <Link to="/AboutMe">
-          <p id="aboutMe" className="tab">
-            About Me
-          </p>
+          <p className="tab">About Me</p>
         </Link>
         <Link to="Projects">
-          <p id="projects" className="tab">
-            Projects
-          </p>
+          <p className="tab">Projects</p>
         </Link>
         <Link to="Future">
-          <p id="future" className="tab">
-            Future
-          </p>
+          <p className="tab">Future</p>
         </Link>
       </nav>
     </>

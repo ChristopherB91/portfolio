@@ -23,7 +23,7 @@ export const AboutMe = () => {
     }
   };
 
-  const [posts] = useState<Post[]>([
+  const posts: Post[] = [
     {
       main: "My name is Christopher Browne I am a full-stack developer specilizing in the front-end.",
     },
@@ -43,17 +43,19 @@ export const AboutMe = () => {
         "Do chess puzzles",
       ],
     },
-  ]);
+  ];
 
   return (
-    <div>
-      <button onClick={() => postChange("left")} value="<-" />
-      <p>{posts[num].main}</p>
-      <ul>
-        {posts[num].bullets &&
-          posts[num].bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
-      </ul>
-      <button onClick={() => postChange("right")} value="->" />
+    <div id="aboutMe">
+      <input type="button" onClick={() => postChange("left")} value="<-" />
+      <div className="posts">
+        <p>{posts[num].main}</p>
+        <ul>
+          {posts[num].bullets &&
+            posts[num].bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
+        </ul>
+      </div>
+      <input type="button" onClick={() => postChange("right")} value="->" />
     </div>
   );
 };

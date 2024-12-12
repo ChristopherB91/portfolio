@@ -183,6 +183,26 @@ h1 {
   }
 }
 
+/* About Me */
+
+#aboutMe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#aboutMe input {
+  background-color: #0a090c;
+  color: #f0edee;
+}
+
+#aboutMe ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: disc;
+}
+
 /* Footer */
 
 footer {
