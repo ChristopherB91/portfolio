@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -40,15 +41,21 @@ export const Navbar = () => {
             id="line3"
           />
         </svg>
-        <p id="aboutMe" className="tab">
-          About Me
-        </p>
-        <p id="projects" className="tab">
-          Projects
-        </p>
-        <p id="future" className="tab">
-          Future
-        </p>
+        <Link to="/AboutMe">
+          <p id="aboutMe" className="tab">
+            About Me
+          </p>
+        </Link>
+        <Link to="Projects">
+          <p id="projects" className="tab">
+            Projects
+          </p>
+        </Link>
+        <Link to="Future">
+          <p id="future" className="tab">
+            Future
+          </p>
+        </Link>
       </nav>
     </>
   );

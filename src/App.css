@@ -31,12 +31,15 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   font-weight: bold;
+}
+
+nav p {
   color: #0a090c;
 }
 
 .tab {
-  transform: translate(-350px, 0);
-  opacity: 0;
+  transform: translate(-425px, 0);
+  opacity: 1;
 }
 
 svg.active #line1 {
@@ -73,7 +76,7 @@ svg:not(.active) #line3 {
 
 @keyframes tabExt {
   from {
-    transform: translate(-350px, 0);
+    transform: translate(-425px, 0);
     opacity: 0;
   }
   to {
@@ -88,7 +91,7 @@ svg:not(.active) #line3 {
     opacity: 1;
   }
   to {
-    transform: translate(-350px, 0);
+    transform: translate(-425px, 0);
     opacity: 0;
   }
 }
