@@ -5,6 +5,28 @@ interface Post {
   bullets?: string[];
 }
 
+const posts: Post[] = [
+  {
+    main: "My name is Christopher Browne I am a full-stack developer specilizing in the front-end.",
+  },
+  {
+    main: "I started learning at per scholas in 2021 where I went through a 3 month bootcamp and learned...",
+    bullets: ["HTML5", "CSS", "JavaScript ES6", "React"],
+  },
+  {
+    main: "Since then I have learned...",
+    bullets: ["Typescript", "Java", "Spring-boot", "MySQL"],
+  },
+  {
+    main: "In my downtime I like to...",
+    bullets: [
+      "Play video games",
+      "Watch anime / read manga",
+      "Do chess puzzles",
+    ],
+  },
+];
+
 export const AboutMe = () => {
   const [num, setNum] = useState<number>(0);
   const postChange = (wrd: string) => {
@@ -22,28 +44,6 @@ export const AboutMe = () => {
       }
     }
   };
-
-  const posts: Post[] = [
-    {
-      main: "My name is Christopher Browne I am a full-stack developer specilizing in the front-end.",
-    },
-    {
-      main: "I started learning at per scholas in 2021 where I went through a 3 month bootcamp and learned...",
-      bullets: ["HTML5", "CSS", "JavaScript ES6", "React"],
-    },
-    {
-      main: "Since then I have learned...",
-      bullets: ["Typescript", "Java", "Spring-boot", "MySQL"],
-    },
-    {
-      main: "In my downtime I like to...",
-      bullets: [
-        "Play video games",
-        "Watch anime / read manga",
-        "Do chess puzzles",
-      ],
-    },
-  ];
 
   return (
     <div id="aboutMe">
