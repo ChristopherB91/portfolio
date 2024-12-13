@@ -204,6 +204,34 @@ h1 {
   list-style-type: disc;
 }
 
+/* Projects */
+
+#projects div {
+  display: flex;
+  align-items: center;
+}
+
+#projects input {
+  background-color: #0a090c;
+  color: #f0edee;
+  font-size: larger;
+}
+
+#projects img {
+  max-width: 100%;
+}
+
+#projects ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#projects ul p,
+#projects ul li {
+  margin: 0;
+}
+
 /* Footer */
 
 footer {
