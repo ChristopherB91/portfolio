@@ -158,7 +158,7 @@ svg:not(.active) #line3 {
   }
 }
 
-/* Content */
+/* Introduction */
 
 h1 {
   align-self: center;
@@ -230,6 +230,19 @@ h1 {
 #projects ul p,
 #projects ul li {
   margin: 0;
+}
+
+/* myFuture */
+
+#future {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#future ul li {
+  list-style-type: disc;
+  text-align: center;
 }
 
 /* Footer */
