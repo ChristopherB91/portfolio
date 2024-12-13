@@ -42,13 +42,19 @@ export const Navbar = () => {
           />
         </svg>
         <Link to="/AboutMe">
-          <p className="tab">About Me</p>
+          <p className="tab" onClick={() => setIsActive(!isActive)}>
+            About Me
+          </p>
         </Link>
         <Link to="Projects">
-          <p className="tab">Projects</p>
+          <p className="tab" onClick={() => setIsActive(!isActive)}>
+            Projects
+          </p>
         </Link>
         <Link to="Future">
-          <p className="tab">Future</p>
+          <p className="tab" onClick={() => setIsActive(!isActive)}>
+            Future
+          </p>
         </Link>
       </nav>
     </>
