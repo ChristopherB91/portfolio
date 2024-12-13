@@ -6,6 +6,7 @@ import { AboutMe } from "./components/aboutMe.tsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { ErrorPage } from "./components/ErrorPage.tsx";
 import { Projects } from "./components/projects.tsx";
+import { Future } from "./components/future.tsx";
 
 const Layout = () => (
   <>
@@ -23,7 +24,7 @@ function App() {
         { path: "/", element: <Introduction /> },
         { path: "/AboutMe", element: <AboutMe /> },
         { path: "/Projects", element: <Projects /> },
-        { path: "/Future", element: <Introduction /> },
+        { path: "/Future", element: <Future /> },
       ],
       errorElement: <ErrorPage />,
     },
