@@ -5,6 +5,7 @@ import { Introduction } from "./components/intro.tsx";
 import { AboutMe } from "./components/aboutMe.tsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { ErrorPage } from "./components/ErrorPage.tsx";
+import { Projects } from "./components/projects.tsx";
 
 const Layout = () => (
   <>
@@ -21,7 +22,7 @@ function App() {
       children: [
         { path: "/", element: <Introduction /> },
         { path: "/AboutMe", element: <AboutMe /> },
-        { path: "/Projects", element: <Introduction /> },
+        { path: "/Projects", element: <Projects /> },
         { path: "/Future", element: <Introduction /> },
       ],
       errorElement: <ErrorPage />,
