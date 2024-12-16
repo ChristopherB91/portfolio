@@ -1,7 +1,7 @@
 import "./App.css";
 import { Navbar } from "./components/navbar.tsx";
 import { Footer } from "./components/footer.tsx";
-import { Introduction } from "./components/intro.tsx";
+import { Homepage } from "./components/homepage.tsx";
 import { AboutMe } from "./components/aboutMe.tsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { ErrorPage } from "./components/ErrorPage.tsx";
@@ -21,7 +21,7 @@ function App() {
     {
       element: <Layout />,
       children: [
-        { path: "/", element: <Introduction /> },
+        { path: "/", element: <Homepage /> },
         { path: "/AboutMe", element: <AboutMe /> },
         { path: "/Projects", element: <Projects /> },
         { path: "/Future", element: <Future /> },
