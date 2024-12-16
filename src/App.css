@@ -28,8 +28,7 @@ nav {
   z-index: 1;
   background-color: #f0edee;
   display: flex;
-  justify-content: end;
-  gap: 55px;
+  justify-content: space-between;
   align-items: center;
   font-weight: bold;
 }
@@ -41,11 +40,6 @@ nav p {
 .tab {
   transform: translate(-425px, 0);
   opacity: 1;
-}
-
-nav svg {
-  position: absolute;
-  left: 60px;
 }
 
 svg.active #line1 {
@@ -168,7 +162,7 @@ svg:not(.active) #line3 {
   }
 }
 
-/* Introduction */
+/* Homepage */
 
 h1 {
   align-self: center;
