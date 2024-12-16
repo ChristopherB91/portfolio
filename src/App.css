@@ -187,6 +187,12 @@ h1 {
   }
 }
 
+@media screen and (max-width: 430px) {
+  h1 svg {
+    width: 100%;
+  }
+}
+
 /* About Me */
 
 #aboutMe {
