@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface Post {
-  main: string;
+  main: string | JSX.Element;
   bullets?: string[];
 }
 
@@ -10,7 +10,19 @@ const posts: Post[] = [
     main: "My name is Christopher Browne I am a full-stack developer specilizing in the front-end.",
   },
   {
-    main: "I started learning at per scholas in 2021 where I went through a 3 month bootcamp and learned...",
+    main: (
+      <>
+        I started learning at{" "}
+        <a
+          href="https://perscholas.org/about-per-scholas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Per Scholas
+        </a>{" "}
+        in 2021, where I went through a 3-month bootcamp and learned...
+      </>
+    ),
     bullets: ["HTML5", "CSS", "JavaScript ES6", "React"],
   },
   {
