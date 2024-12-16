@@ -37,11 +37,6 @@ nav p {
   color: #0a090c;
 }
 
-.tab {
-  transform: translate(-425px, 0);
-  opacity: 1;
-}
-
 svg.active #line1 {
   animation: hamburgerTop 0.2s ease-in-out forwards;
 }
@@ -187,7 +182,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 425px) {
   h1 svg {
     width: 100%;
   }
