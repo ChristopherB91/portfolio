@@ -15,7 +15,7 @@ const posts: Post[] = [
   },
   {
     main: "Since then I have learned...",
-    bullets: ["Typescript", "Java", "Spring-boot", "MySQL"],
+    bullets: ["Typescript", "Tailwind", "Java", "Spring-boot", "MySQL"],
   },
   {
     main: "In my downtime I like to...",
