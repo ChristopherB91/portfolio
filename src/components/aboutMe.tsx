@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Post {
   main: string | JSX.Element;
@@ -41,26 +41,50 @@ const posts: Post[] = [
 
 export const AboutMe = () => {
   const [num, setNum] = useState<number>(0);
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsActive(true);
+      setTimeout(() => {
+        if (num === posts.length - 1) {
+          setNum(0);
+        } else {
+          setNum(num + 1);
+        }
+      }, 500);
+      setTimeout(() => {
+        setIsActive(false);
+      }, 1000);
+    }, 5000);
+  }, [num]);
+
   const postChange = (wrd: string) => {
-    if (wrd === "left") {
-      if (num === 0) {
-        setNum(posts.length - 1);
-      } else {
-        setNum(num - 1);
+    setIsActive(true);
+    setTimeout(() => {
+      if (wrd === "left") {
+        if (num === 0) {
+          setNum(posts.length - 1);
+        } else {
+          setNum(num - 1);
+        }
+      } else if (wrd === "right") {
+        if (num === posts.length - 1) {
+          setNum(0);
+        } else {
+          setNum(num + 1);
+        }
       }
-    } else if (wrd === "right") {
-      if (num === posts.length - 1) {
-        setNum(0);
-      } else {
-        setNum(num + 1);
-      }
-    }
+    }, 500);
+    setTimeout(() => {
+      setIsActive(false);
+    }, 1000);
   };
 
   return (
     <div id="aboutMe">
       <input type="button" onClick={() => postChange("left")} value="<-" />
-      <div className="posts">
+      <div className={isActive ? "active" : ""}>
         <p>{posts[num].main}</p>
         <ul>
           {posts[num].bullets &&

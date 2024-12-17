@@ -165,6 +165,10 @@ h1 {
   z-index: 0;
 }
 
+h1 svg {
+  width: 100%;
+}
+
 .Intro {
   stroke: white;
   stroke-dasharray: 1800;
@@ -182,24 +186,19 @@ h1 {
   }
 }
 
-@media screen and (max-width: 425px) {
-  h1 svg {
-    width: 100%;
-  }
-}
-
 /* About Me */
 
 #aboutMe {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: x-large;
 }
 
 #aboutMe input {
   background-color: #0a090c;
   color: #f0edee;
-  font-size: larger;
+  font-size: large;
 }
 
 #aboutMe ul {
@@ -207,6 +206,28 @@ h1 {
   flex-direction: column;
   align-items: center;
   list-style-type: disc;
+}
+
+#aboutMe div.active {
+  animation: textSwitch 1s ease-in-out;
+}
+
+@keyframes textSwitch {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Projects */
