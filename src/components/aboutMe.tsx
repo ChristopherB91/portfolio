@@ -42,24 +42,10 @@ const posts: Post[] = [
 export const AboutMe = () => {
   const [num, setNum] = useState<number>(0);
   const [isActive, setIsActive] = useState<boolean>(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsActive(true);
-      setTimeout(() => {
-        if (num === posts.length - 1) {
-          setNum(0);
-        } else {
-          setNum(num + 1);
-        }
-      }, 500);
-      setTimeout(() => {
-        setIsActive(false);
-      }, 1000);
-    }, 5000);
-  }, [num]);
+  const [passiveChange, setPassiveChange] = useState<boolean>(false);
 
   const postChange = (wrd: string) => {
+    setPassiveChange(false);
     setIsActive(true);
     setTimeout(() => {
       if (wrd === "left") {
@@ -81,9 +67,30 @@ export const AboutMe = () => {
     }, 1000);
   };
 
+  useEffect(() => {
+    if (passiveChange) {
+      const timeout = setTimeout(() => {
+        postChange("right");
+      }, 5000);
+
+      return () => clearTimeout(timeout);
+    }
+    const passiveTimeout = setTimeout(() => {
+      setPassiveChange(true);
+    }, 10000);
+
+    return () => clearTimeout(passiveTimeout);
+  });
+
   return (
     <div id="aboutMe">
-      <input type="button" onClick={() => postChange("left")} value="<-" />
+      <button
+        onClick={() => postChange("left")}
+        disabled={isActive}
+        aria-label="Previous slide"
+      >
+        &larr;
+      </button>
       <div className={isActive ? "active" : ""}>
         <p>{posts[num].main}</p>
         <ul>
@@ -91,7 +98,13 @@ export const AboutMe = () => {
             posts[num].bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
         </ul>
       </div>
-      <input type="button" onClick={() => postChange("right")} value="->" />
+      <button
+        onClick={() => postChange("right")}
+        disabled={isActive}
+        aria-label="Next slide"
+      >
+        &rarr;
+      </button>
     </div>
   );
 };

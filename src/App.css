@@ -191,21 +191,28 @@ h1 svg {
 #aboutMe {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: x-large;
 }
 
-#aboutMe input {
-  background-color: #0a090c;
+#aboutMe button {
+  background: none;
   color: #f0edee;
   font-size: large;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 1rem;
 }
 
-#aboutMe ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style-type: disc;
+#aboutMe button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#aboutMe ul li {
+  text-align: center;
+  list-style-type: none;
 }
 
 #aboutMe div.active {
