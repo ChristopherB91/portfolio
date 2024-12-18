@@ -158,6 +158,20 @@ svg:not(.active) #line3 {
   }
 }
 
+@media screen and (min-width: 426px) {
+  nav {
+    justify-content: space-evenly;
+  }
+
+  nav svg {
+    display: none;
+  }
+
+  nav:not(.active) .tab {
+    animation: tabExt 0.2s ease-in-out forwards;
+  }
+}
+
 /* Homepage */
 
 h1 {
