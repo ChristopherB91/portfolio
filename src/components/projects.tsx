@@ -98,9 +98,9 @@ export const Projects = () => {
   });
 
   return (
-    <div id="projects" className={isActive ? "active" : ""}>
-      <h2>{projects[num].title}</h2>
-      <p>{projects[num].description}</p>
+    <div id="projects">
+      <h2 className={isActive ? "active" : ""}>{projects[num].title}</h2>
+      <p className={isActive ? "active" : ""}>{projects[num].description}</p>
       <div>
         <button
           onClick={() => projectChange("left")}
@@ -110,7 +110,11 @@ export const Projects = () => {
           &larr;
         </button>
         <a href={projects[num].link} target="_blank">
-          <img src={projects[num].image} alt="website image" />
+          <img
+            src={projects[num].image}
+            className={isActive ? "active" : ""}
+            alt="website image"
+          />
         </a>
         <button
           onClick={() => projectChange("right")}
@@ -123,7 +127,7 @@ export const Projects = () => {
       <ul>
         <p>Skills used in the project:</p>
         {projects[num].skills.map((skill, index) => (
-          <li key={index}>
+          <li key={index} className={isActive ? "active" : ""}>
             <b>{skill}</b>
           </li>
         ))}
