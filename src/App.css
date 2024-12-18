@@ -272,8 +272,19 @@ h1 svg {
   animation: textSwitch 1s ease-in-out;
 }
 
-#projects div {
+#projects #title {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#projects .projectSwitch {
+  display: flex;
+}
+
+#button1,
+#button2 {
+  display: none;
 }
 
 #projects button {
@@ -304,6 +315,42 @@ h1 svg {
 #projects ul p,
 #projects ul li {
   margin: 0;
+}
+
+@media screen and (min-width: 769px) {
+  #projects {
+    display: grid;
+    grid-template: 1fr 25px / 0.5fr 0.5fr;
+    font-size: x-large;
+  }
+
+  .projectSwitch button {
+    display: none;
+  }
+
+  #title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-area: 1 / 2 / 3 / 3;
+  }
+
+  #button1 {
+    display: block;
+    grid-area: 2 / 2 / 3 / 3;
+    place-self: self-start;
+  }
+
+  #button2 {
+    display: block;
+    place-self: end;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  #projects img {
+    height: 100%;
+    grid-area: 1 / 1 / 2 / 2;
+  }
 }
 
 /* myFuture */
