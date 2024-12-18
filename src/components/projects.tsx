@@ -1,7 +1,7 @@
 import PR from "../assets/projectPictures/PRWebsite.png";
 import omni from "../assets/projectPictures/omniDex.jpeg";
 import fig from "../assets/projectPictures/figmaToDevelopment.jpeg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Project {
   title: string;
@@ -49,32 +49,76 @@ const projects: Project[] = [
 
 export const Projects = () => {
   const [num, setNum] = useState<number>(0);
-  const postChange = (wrd: string) => {
-    if (wrd === "left") {
-      if (num === 0) {
-        setNum(projects.length - 1);
-      } else {
-        setNum(num - 1);
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const [passiveChange, setPassiveChange] = useState<boolean>(false);
+
+  const projectChange = (wrd: string) => {
+    setIsActive(true);
+    setTimeout(() => {
+      if (wrd === "left") {
+        setPassiveChange(false);
+        if (num === 0) {
+          setNum(projects.length - 1);
+        } else {
+          setNum(num - 1);
+        }
+      } else if (wrd === "right") {
+        setPassiveChange(false);
+        if (num === projects.length - 1) {
+          setNum(0);
+        } else {
+          setNum(num + 1);
+        }
+      } else if (wrd === "passive") {
+        if (num === projects.length - 1) {
+          setNum(0);
+        } else {
+          setNum(num + 1);
+        }
       }
-    } else if (wrd === "right") {
-      if (num === projects.length - 1) {
-        setNum(0);
-      } else {
-        setNum(num + 1);
-      }
-    }
+    }, 500);
+    setTimeout(() => {
+      setIsActive(false);
+    }, 1000);
   };
 
+  useEffect(() => {
+    if (passiveChange === true) {
+      const timeout = setTimeout(() => {
+        projectChange("passive");
+      }, 5000);
+
+      return () => clearTimeout(timeout);
+    } else {
+      const passiveTimeout = setTimeout(() => {
+        setPassiveChange(true);
+      }, 5000);
+      return () => clearTimeout(passiveTimeout);
+    }
+  });
+
   return (
-    <div id="projects">
+    <div id="projects" className={isActive ? "active" : ""}>
       <h2>{projects[num].title}</h2>
       <p>{projects[num].description}</p>
       <div>
-        <input type="button" onClick={() => postChange("left")} value="<-" />
+        <button
+          onClick={() => projectChange("left")}
+          aria-label="previous project"
+          disabled={isActive}
+        >
+          &larr;
+        </button>
         <a href={projects[num].link} target="_blank">
           <img src={projects[num].image} alt="website image" />
         </a>
-        <input type="button" onClick={() => postChange("right")} value="->" />
+        <button
+          onClick={() => projectChange("right")}
+          aria-label="next project"
+          disabled={isActive}
+        >
+          &rarr;
+        </button>
       </div>
       <ul>
         <p>Skills used in the project:</p>
