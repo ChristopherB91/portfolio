@@ -7,7 +7,7 @@ interface Post {
 
 const posts: Post[] = [
   {
-    main: "My name is Christopher Browne I am a full-stack developer specilizing in the front-end.",
+    main: "My name is Christopher Browne I am a full-stack developer specilizing in front-end development.",
   },
   {
     main: (
