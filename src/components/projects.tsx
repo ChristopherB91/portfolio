@@ -99,9 +99,11 @@ export const Projects = () => {
 
   return (
     <div id="projects">
-      <h2 className={isActive ? "active" : ""}>{projects[num].title}</h2>
-      <p className={isActive ? "active" : ""}>{projects[num].description}</p>
-      <div>
+      <div id="title">
+        <h2 className={isActive ? "active" : ""}>{projects[num].title}</h2>
+        <p className={isActive ? "active" : ""}>{projects[num].description}</p>
+      </div>
+      <div className="projectSwitch">
         <button
           onClick={() => projectChange("left")}
           aria-label="previous project"
@@ -124,6 +126,22 @@ export const Projects = () => {
           &rarr;
         </button>
       </div>
+      <button
+        onClick={() => projectChange("left")}
+        aria-label="previous project"
+        disabled={isActive}
+        id="button1"
+      >
+        &larr;
+      </button>
+      <button
+        onClick={() => projectChange("left")}
+        aria-label="previous project"
+        disabled={isActive}
+        id="button2"
+      >
+        &rarr;
+      </button>
       <ul>
         <p>Skills used in the project:</p>
         {projects[num].skills.map((skill, index) => (
