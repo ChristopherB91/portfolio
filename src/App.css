@@ -239,15 +239,33 @@ h1 svg {
 
 /* Projects */
 
-#projects div {
+#projects {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-#projects input {
-  background-color: #0a090c;
+#projects.active {
+  animation: textSwitch 1s ease-in-out;
+}
+
+#projects div {
+  display: flex;
+}
+
+#projects button {
+  background: none;
   color: #f0edee;
-  font-size: larger;
+  font-size: large;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+#projects button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 #projects img {
