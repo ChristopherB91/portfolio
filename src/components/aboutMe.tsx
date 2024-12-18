@@ -45,16 +45,23 @@ export const AboutMe = () => {
   const [passiveChange, setPassiveChange] = useState<boolean>(false);
 
   const postChange = (wrd: string) => {
-    setPassiveChange(false);
     setIsActive(true);
     setTimeout(() => {
       if (wrd === "left") {
+        setPassiveChange(false);
         if (num === 0) {
           setNum(posts.length - 1);
         } else {
           setNum(num - 1);
         }
       } else if (wrd === "right") {
+        setPassiveChange(false);
+        if (num === posts.length - 1) {
+          setNum(0);
+        } else {
+          setNum(num + 1);
+        }
+      } else if (wrd === "passive") {
         if (num === posts.length - 1) {
           setNum(0);
         } else {
@@ -68,18 +75,18 @@ export const AboutMe = () => {
   };
 
   useEffect(() => {
-    if (passiveChange) {
+    if (passiveChange === true) {
       const timeout = setTimeout(() => {
-        postChange("right");
+        postChange("passive");
       }, 5000);
 
       return () => clearTimeout(timeout);
+    } else {
+      const passiveTimeout = setTimeout(() => {
+        setPassiveChange(true);
+      }, 5000);
+      return () => clearTimeout(passiveTimeout);
     }
-    const passiveTimeout = setTimeout(() => {
-      setPassiveChange(true);
-    }, 10000);
-
-    return () => clearTimeout(passiveTimeout);
   });
 
   return (
