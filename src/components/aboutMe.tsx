@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
+import me from "../assets/aboutMe/heaadshot.jpg";
+import start from "../assets/aboutMe/webDevStart.png";
+import learned from "../assets/aboutMe/webDevLearned.png";
+import likes from "../assets/aboutMe/webDevLikes.png";
 
 interface Post {
   main: string | JSX.Element;
   bullets?: string[];
+  image: string;
 }
 
 const posts: Post[] = [
   {
     main: "My name is Christopher Browne I am a full-stack developer specilizing in front-end development.",
+    image: me,
   },
   {
     main: (
@@ -24,10 +30,12 @@ const posts: Post[] = [
       </>
     ),
     bullets: ["HTML5", "CSS", "JavaScript ES6", "React"],
+    image: start,
   },
   {
     main: "Since then I have learned...",
     bullets: ["Typescript", "Tailwind", "Java", "Spring-boot", "MySQL"],
+    image: learned,
   },
   {
     main: "In my downtime I like to...",
@@ -36,6 +44,7 @@ const posts: Post[] = [
       "Watch anime / read manga",
       "Do chess puzzles",
     ],
+    image: likes,
   },
 ];
 
@@ -99,6 +108,7 @@ export const AboutMe = () => {
         &larr;
       </button>
       <div className={isActive ? "active" : ""}>
+        <img src={posts[num].image} alt="photo" />
         <p>{posts[num].main}</p>
         <ul>
           {posts[num].bullets &&
