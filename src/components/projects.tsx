@@ -112,11 +112,14 @@ export const Projects = () => {
           &larr;
         </button>
         <a href={projects[num].link} target="_blank">
-          <img
-            src={projects[num].image}
-            className={isActive ? "active" : ""}
-            alt="website image"
-          />
+          <figure>
+            <img
+              src={projects[num].image}
+              className={isActive ? "active" : ""}
+              alt="website image"
+            />
+            <figcaption>Click the site picture to view the site</figcaption>
+          </figure>
         </a>
         <button
           onClick={() => projectChange("right")}
