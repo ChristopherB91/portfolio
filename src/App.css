@@ -237,6 +237,11 @@ h1 svg {
   place-self: center;
 }
 
+#subAboutMe figure {
+  height: auto;
+  width: 100%;
+}
+
 #description {
   align-self: center;
 }
@@ -277,6 +282,10 @@ h1 svg {
   #subAboutMe {
     display: grid;
     grid-template: 1fr / 1fr 1fr;
+  }
+
+  #subAboutMe figure {
+    width: auto;
   }
 }
 
