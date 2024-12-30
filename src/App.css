@@ -56,6 +56,7 @@ nav.active .tab {
 
 nav:not(.active) .tab {
   animation: tabExtReverse 0.2s ease-in-out forwards;
+  display: none;
 }
 
 svg:not(.active) #line1 {
@@ -169,6 +170,7 @@ svg:not(.active) #line3 {
 
   nav:not(.active) .tab {
     animation: none;
+    display: block;
   }
 
   nav.active .tab {
