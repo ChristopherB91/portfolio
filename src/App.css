@@ -273,6 +273,13 @@ h1 svg {
   }
 }
 
+@media screen and (min-width: 426px) {
+  #subAboutMe {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+  }
+}
+
 /* Projects */
 
 #projects {
