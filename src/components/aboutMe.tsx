@@ -107,13 +107,17 @@ export const AboutMe = () => {
       >
         &larr;
       </button>
-      <div className={isActive ? "active" : ""}>
-        <img src={posts[num].image} alt="photo" />
-        <p>{posts[num].main}</p>
-        <ul>
-          {posts[num].bullets &&
-            posts[num].bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
-        </ul>
+      <div id="subAboutMe" className={isActive ? "active" : ""}>
+        <figure>
+          <img src={posts[num].image} alt="photo" />
+        </figure>
+        <div id="description">
+          <p>{posts[num].main}</p>
+          <ul>
+            {posts[num].bullets &&
+              posts[num].bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
+          </ul>
+        </div>
       </div>
       <button
         onClick={() => postChange("right")}

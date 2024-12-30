@@ -225,6 +225,22 @@ h1 svg {
   margin: 0 1rem;
 }
 
+#subAboutMe {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr;
+  place-items: center;
+}
+
+#subAboutMe img {
+  width: 100%;
+  align-self: center;
+  place-self: center;
+}
+
+#description {
+  align-self: center;
+}
+
 #aboutMe button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -235,7 +251,7 @@ h1 svg {
   list-style-type: none;
 }
 
-#aboutMe div.active {
+#subAboutMe.active {
   animation: textSwitch 1s ease-in-out;
 }
 
