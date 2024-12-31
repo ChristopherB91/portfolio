@@ -84,6 +84,23 @@ export const AboutMe = () => {
   };
 
   useEffect(() => {
+    let initialPosition: number;
+    let currentPosition: number;
+
+    addEventListener("touchstart", (e) => {
+      initialPosition = e.changedTouches[0].pageX;
+    });
+
+    addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      currentPosition = e.changedTouches[0].pageX;
+      if (currentPosition < initialPosition - 150) {
+        postChange("right");
+      } else if (currentPosition > initialPosition + 150) {
+        postChange("left");
+      }
+    });
+
     if (passiveChange === true) {
       const timeout = setTimeout(() => {
         postChange("passive");
