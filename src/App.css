@@ -218,6 +218,7 @@ h1 svg {
 }
 
 #aboutMe button {
+  display: none;
   background: none;
   color: #f0edee;
   font-size: large;
@@ -284,6 +285,10 @@ h1 svg {
   #subAboutMe {
     display: grid;
     grid-template: 1fr / 1fr 1fr;
+  }
+
+  #aboutMe button {
+    display: block;
   }
 
   #subAboutMe figure {
