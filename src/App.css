@@ -235,15 +235,16 @@ h1 svg {
 }
 
 #subAboutMe img {
-  width: 100%;
+  max-width: 75%;
+  height: auto;
   align-self: center;
   place-self: center;
 }
 
-#subAboutMe figure {
+/* #subAboutMe figure {
   height: auto;
-  width: 100%;
-}
+  max-width: 100%;
+} */
 
 #description {
   align-self: center;
@@ -289,10 +290,6 @@ h1 svg {
 
   #aboutMe button {
     display: block;
-  }
-
-  #subAboutMe figure {
-    width: auto;
   }
 }
 
