@@ -117,27 +117,31 @@ export const AboutMe = () => {
 
   return (
     <div id="aboutMe">
+      <img
+        src={posts[num].image}
+        alt="photo"
+        className={isActive ? "active" : ""}
+      />
+      <div id="description" className={isActive ? "active" : ""}>
+        <p>{posts[num].main}</p>
+        <ul>
+          {posts[num].bullets &&
+            posts[num].bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
+        </ul>
+      </div>
       <button
         onClick={() => postChange("left")}
         disabled={isActive}
         aria-label="Previous slide"
+        id="button1"
       >
         &larr;
       </button>
-      <div id="subAboutMe" className={isActive ? "active" : ""}>
-        <img src={posts[num].image} alt="photo" />
-        <div id="description">
-          <p>{posts[num].main}</p>
-          <ul>
-            {posts[num].bullets &&
-              posts[num].bullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
-          </ul>
-        </div>
-      </div>
       <button
         onClick={() => postChange("right")}
         disabled={isActive}
         aria-label="Next slide"
+        id="button2"
       >
         &rarr;
       </button>

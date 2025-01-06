@@ -215,6 +215,7 @@ h1 svg {
   align-items: center;
   justify-content: center;
   font-size: x-large;
+  flex-wrap: wrap;
 }
 
 #aboutMe button {
@@ -228,23 +229,12 @@ h1 svg {
   margin: 0 1rem;
 }
 
-#subAboutMe {
-  display: grid;
-  grid-template: 1fr 1fr / 1fr;
-  place-items: center;
-}
-
-#subAboutMe img {
+#aboutMe img {
   max-width: 75%;
   height: auto;
   align-self: center;
   place-self: center;
 }
-
-/* #subAboutMe figure {
-  height: auto;
-  max-width: 100%;
-} */
 
 #description {
   align-self: center;
@@ -282,14 +272,18 @@ h1 svg {
   }
 }
 
-@media screen and (min-width: 426px) {
-  #subAboutMe {
+@media screen and (min-width: 769px) {
+  #aboutMe {
     display: grid;
-    grid-template: 1fr / 1fr 1fr;
+    grid-template: 1fr 25px / 0.5fr 0.5fr;
   }
 
   #aboutMe button {
     display: block;
+  }
+
+  #aboutMe {
+    display: grid;
   }
 }
 
@@ -312,10 +306,6 @@ h1 svg {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
-
-#projects .projectSwitch {
-  display: flex;
 }
 
 #button1,
