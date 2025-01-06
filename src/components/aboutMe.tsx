@@ -125,9 +125,7 @@ export const AboutMe = () => {
         &larr;
       </button>
       <div id="subAboutMe" className={isActive ? "active" : ""}>
-        <figure>
-          <img src={posts[num].image} alt="photo" />
-        </figure>
+        <img src={posts[num].image} alt="photo" />
         <div id="description">
           <p>{posts[num].main}</p>
           <ul>
