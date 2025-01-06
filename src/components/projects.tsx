@@ -83,6 +83,23 @@ export const Projects = () => {
   };
 
   useEffect(() => {
+    let initialPosition: number;
+    let currentPosition: number;
+
+    addEventListener("touchstart", (e) => {
+      initialPosition = e.changedTouches[0].pageX;
+    });
+
+    addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      currentPosition = e.changedTouches[0].pageX;
+      if (currentPosition < initialPosition - 150) {
+        projectChange("right");
+      } else if (currentPosition > initialPosition + 150) {
+        projectChange("left");
+      }
+    });
+
     if (passiveChange === true) {
       const timeout = setTimeout(() => {
         projectChange("passive");
@@ -103,32 +120,16 @@ export const Projects = () => {
         <h2 className={isActive ? "active" : ""}>{projects[num].title}</h2>
         <p className={isActive ? "active" : ""}>{projects[num].description}</p>
       </div>
-      <div className="projectSwitch">
-        <button
-          onClick={() => projectChange("left")}
-          aria-label="previous project"
-          disabled={isActive}
-        >
-          &larr;
-        </button>
-        <a href={projects[num].link} target="_blank">
-          <figure>
-            <img
-              src={projects[num].image}
-              className={isActive ? "active" : ""}
-              alt="website image"
-            />
-            <figcaption>Click the site picture to view the site</figcaption>
-          </figure>
-        </a>
-        <button
-          onClick={() => projectChange("right")}
-          aria-label="next project"
-          disabled={isActive}
-        >
-          &rarr;
-        </button>
-      </div>
+      <a href={projects[num].link} target="_blank">
+        <figure>
+          <img
+            src={projects[num].image}
+            className={isActive ? "active" : ""}
+            alt="website image"
+          />
+          <figcaption>Click the site picture to view the site</figcaption>
+        </figure>
+      </a>
       <button
         onClick={() => projectChange("left")}
         aria-label="previous project"
