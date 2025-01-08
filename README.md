@@ -6,3 +6,5 @@ On my portfolio you will find pretty basic stuff like an about me, my current pr
 
 The omniDex - https://github.com/ChristopherB91/omniDex.git
 The friendlyNeighborhood app - https://github.com/ChristopherB91/friendlyNeighborhood.git
+The figma project - https://github.com/ChristopherB91/FigProject1.git
+Prison Reform job board - https://github.com/ChristopherB91/pr.git
