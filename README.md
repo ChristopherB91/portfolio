@@ -1,4 +1,4 @@
-# Christopher's portolio
+# Christophe Browne's portolio
 
 Hello my name is Christopher Browne. I am a developer with 2 (going on to 3 years) of experience. I am mainly a front-end React developer but I have been learning java and the spring framework in order to become a full-stack developer. Two of my full-stack projects can be found my github they will be linked below or on my portfolio with other projects.
 
