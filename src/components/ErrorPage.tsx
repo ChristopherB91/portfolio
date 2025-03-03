@@ -16,7 +16,7 @@ export const ErrorPage: React.FC = () => {
       <p>
         <i>{error.status || error.message}</i>
       </p>
-      <Link to="/">
+      <Link to="/portfolio">
         <button>Click here to return</button>
       </Link>
     </div>
