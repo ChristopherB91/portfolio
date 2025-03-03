@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ChristopherB91.github.io/portfolio/",
+  "homepage": "https://christopherb91.github.io/portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
