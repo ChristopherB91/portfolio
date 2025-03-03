@@ -21,7 +21,7 @@ function App() {
     {
       element: <Layout />,
       children: [
-        { path: "/", element: <Homepage /> },
+        { path: "/portfolio", element: <Homepage /> },
         { path: "/AboutMe", element: <AboutMe /> },
         { path: "/Projects", element: <Projects /> },
         { path: "/Future", element: <Future /> },
